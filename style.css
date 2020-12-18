@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+:root {
+	
+	--box-shadow: 0px 1px 2px #444, 0px 1px 2px #444;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	
+	background-color: #f7f7f7;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+	font-family: "JetBrains Mono", sans-serif;
+}
+
+.container {
+	
+	margin:  30px auto;
+	width:  400px;
+	background-color: #fff;
+	border-radius: 5% 12%;
+	box-shadow: 5px 10px .7em .25em rgba(0, 0, 0, 0.25);
+
+	padding: 30px 30px;
+}
+
+h1 {
+	
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+body h2 {
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+h3 {
+	
+	border-bottom: 1px solid #bbb;
+	padding-bottom: 10px;
+	margin: 40px 0 10px;
+}
+
+h4 {
+	
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.tracker {
+	background-color: #fff;
+	
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0;
+}
+
+.tracker > div {
+	
+	flex: 1;
+	text-align: center;
+}
+
+.tracker > div:first-of-type {
+	
+	border-right: 1px solid #333;
+}
+
+.add {
+	font-size: 20px;
+	letter-spacing: 1px;
+	margin: 5px 0;
+}
+
+.add.income {
+	color: #2ecc71;
+}
+
+.add.expense {
+	
+	color: #c0392b;
+}
+
+label {
+	
+	display: inline-block;
+	margin: 10px 0;
+}
+
+input[type='text'], 
+input[type='number'] {
+	border:  1px solid #dedede;
+	border-radius: 2px;
+	display: block;
+	font-size: 10px;
+	padding: 10px;
+	width: 100%;
+}
+
+.btn {
+	cursor: pointer;
+	background-color:  #2D3047;
+	box-shadow: var(—-box-shadow);
+	color:  #fff;
+	border: 0;
+	border-radius: 8px;
+	display: block;
+	font-size: 16px;
+	margin: 10px 0 30px;
+	padding: 10px;
+	width: 100%;
+}
+
+.btn:focus, 
+.delete-btn:focus {
+	outline: 0;
+}
+
+.list {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 40px;
+}
+
+.list li {
+	background-color: #fff;
+	box-shadow: var(—-box-shadow);
+	color: #333;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.list li.income {
+	border-right:  5px solid #2ecc71;
+}
+
+.list li.expense {
+	border-right: 5px solid #c0392b;
+}
+
+
+.delete-btn {
+	cursor: pointer;
+	background-color: #c0392b;
+	border: 0;
+	color: #fff;
+	font-size: 20px;
+	line-height: 20px;
+	padding: 2px 5px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(-100%, -50%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+	opacity: 1;
+}
+
+
+
+
+
