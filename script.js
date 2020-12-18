@@ -6,11 +6,11 @@ const form = document.getElementById('form');
 const text = document.getElementById('text');
 const amount = document.getElementById('amount');
 
-const sample = [
-	{id: 1, text: 'Warteg', amount: -20000},
-	{id: 2, text: 'Duit Jajan', amount: 300000},
-	{id: 3, text: 'Boba', amount: -14000},
-	{id: 4, text: 'Bioskop', amount: -45000}
+let sample = [
+	// {id: 1, text: 'Warteg', amount: -20000}
+	// {id: 2, text: 'Duit Jajan', amount: 300000},
+	// {id: 3, text: 'Boba', amount: -14000},
+	// {id: 4, text: 'Bioskop', amount: -45000}
 ];
 
 
@@ -67,26 +67,33 @@ function updateValues(transactions) {
 function submitTransaction() {
 	const texts = document.getElementById('text').value
 	const amount = document.getElementById('amount').value
-	
-	const id = sample[sample.length - 1].id + 1
+
+	let id = 1
+	if (sample.length >= 1) {
+		id = sample[sample.length - 1].id + 1
+	}
 
 	let transaksi = {id, text:texts, amount:Number(amount)}
 
-
-	// console.log(transaksi)
 	sample.push(transaksi)
 	addTransaction(sample)
 }
 
 // delete
 function deleteTransaction(id1) {
-	let arr = []
-	for (let i =0; i < sample.length; i++) {
-		if (sample[i].id !== id1) {
-			arr.push(sample[i])
+	let posisi = -1
+	for (let i = 0; i < sample.length; i++) {
+		if (sample[i].id === id1) {
+			posisi = i
+			break
 		}
 	}
-	addTransaction(arr)
+	if (posisi !== -1) {
+		sample.splice(posisi, 1)
+	}
+	addTransaction(sample)
+
+
 }
 
 //Init app
@@ -94,7 +101,7 @@ function init() {
 	// list.innerHTML = '';
 	
 	// transactions.forEach(addTransaction);
-	addTransaction(sample)
+	// addTransaction(sample)
 
 }
 
